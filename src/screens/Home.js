@@ -6,15 +6,34 @@ import {
 	View,
 	Text,
 	StyleSheet,
+	AsyncStorage,
+	Navigator
 } from 'react-native';
 
+var Button = require('../components/Button');
+var Index = require('../../index.ios');
+
 class Home extends Component {
+
+	logout() {
+		AsyncStorage.removeItem('user_data');
+
+		this.props.navigator.push({
+			component: Index
+		})
+	}
+
 	render() {
-		<View style={styles.container}>
-			<Text style={styles.welcome}>
-				Welcome USERNAME_HERE!
-			</Text>
-		</View>
+		return (
+			<View style={styles.container}>
+				<Text style={styles.welcome}>
+					Welcome USERNAME_HERE!
+				</Text>
+				<Button 
+				    text="Logout" 
+				    onPress={this.logout.bind(this)} />
+			</View>
+		)
 	}
 }
 

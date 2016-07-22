@@ -11,26 +11,22 @@ import {
 
 var styles = require('../styles/common-styles');
 
-class Button extends Component {
-	constructor(props) {
-		super(props);
-	}
+var Button = React.createClass({
+	onPress: function() {
+		if(this.props.onPress) this.props.onPress();
+	},
 
-	pressed() {
-		if(this.props.onPress) alert('wassup');
-	}
-
-	render() {
+	render: function() {
 		return (
 			<TouchableOpacity
 				style={[styles.formButton, this.props.style == 'outlined' ? styles.formButtonOutline : null]}
-				onPress={this.props.pressed()}
+				onPress={this.props.onPress}
 				activeOpacity={0.7} >
 				<Text style={[styles.primary_button_text]}>{this.props.text ? this.props.text : 'Click Here'}</Text>
 			</TouchableOpacity>
 		);
 	}
-}
+});
 
 /* ==============================
 Styles
