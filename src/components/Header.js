@@ -12,6 +12,7 @@ import {
 class Header extends Component {
 	render() {
 		return (
+			// CHANGME - Change you the image with your logo
 			<Image source={require('../images/changeme.jpg')} />
 		);
 	}

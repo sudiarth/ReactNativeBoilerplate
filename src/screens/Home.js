@@ -7,27 +7,57 @@ import {
 	Text,
 	StyleSheet,
 	AsyncStorage,
-	Navigator
+	Navigator,
+	ActivityIndicator
 } from 'react-native';
 
 var Button = require('../components/Button');
-var Index = require('../../index.ios');
+var HomeOrLogin = require('./HomeOrLogin');
+
+var styles = require('../styles/common-styles');
 
 class Home extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			userEmail: null,
+			userId: null
+		};
+	}
 
 	logout() {
 		AsyncStorage.removeItem('user_data');
+		this.props.navigator.immediatelyResetRouteStack([{
+			component: HomeOrLogin
+		}]);
+	}
 
-		this.props.navigator.push({
-			component: Index
-		})
+	componentWillMount() {
+		AsyncStorage.getItem('user_data').then((user_data_json) => {
+			let user_data = JSON.parse(user_data_json);
+			console.log(user_data);
+			this.setState({
+				userEmail: user_data.email,
+				userId: user_data.uid
+			});
+		});
 	}
 
 	render() {
+		if (!this.state.userEmail) {
+			return (
+				<ActivityIndicator
+        			animating={this.state.isLoading}
+        			style={[styles.processingAnimation, {height: 80}]}
+        			size="large" />
+        	);
+		}
+
 		return (
 			<View style={styles.container}>
 				<Text style={styles.welcome}>
-					Welcome USERNAME_HERE!
+					Welcome {this.state.userEmail}!
+					You're currently logged in.
 				</Text>
 				<Button 
 				    text="Logout" 
@@ -36,19 +66,5 @@ class Home extends Component {
 		)
 	}
 }
-
-var styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#F5FCFF',
-	},
-	welcome: {
-		fontSize: 20,
-		textAlign: 'center',
-		margin: 10,
-	},
-});
 
 module.exports = Home;

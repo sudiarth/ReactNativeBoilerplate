@@ -15,7 +15,6 @@ var styles = require('../styles/common-styles');
 var Header = require('../components/Header');
 var Button = require('../components/Button');
 var Home = require('../screens/Home');
-var Index = require('../../index.ios');
 
 var firebase = require("firebase");
 // Initialize Firebase
@@ -47,9 +46,14 @@ class Login extends Component {
 			loaded: false
 		});
 
+		var that = this;
+
 		authRef.signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user_data) {
-			console.log("user id:" + user_data.uid);
+			// console.log("user id:" + user_data.uid);
 			AsyncStorage.setItem('user_data', JSON.stringify(user_data));
+			that.props.navigator.push({
+				component: Home
+			});
 		}, function(error) {
 			var errorCode = error.code;
 			var errorMessage = error.message;
@@ -60,16 +64,21 @@ class Login extends Component {
 				alert(errorMessage);
 			}
 		});
+	}
 
+	goToSignUp() {
+		// Lazy load signup page
+		var SingUp = require('./SignUp');
+		
 		this.props.navigator.push({
-			component: Home
-		})
+			component: SingUp
+		});
 	}
 
 	render() {
 		return (
-			<View>
-				<Header />
+			<View style={styles.container}>
+				<Header style={styles.header} />
 				<TextInput 
 					style={styles.textinput}
 					onChangeText={(text) => this.setState({email: text})}
@@ -83,14 +92,19 @@ class Login extends Component {
 					placeholder={"Password"}
 					secureTextEntry={true} />
 				<Button 
-				    text="Login" 
-				    onPress={this.login.bind(this)} />
+				    text="    Login     " 
+				    onPress={this.login.bind(this)}
+				    buttonStyles={styles.primaryButton}
+				    buttonTextStyles={styles.primaryButtonText} />
+				<Button 
+                    text="New User?" 
+                    onPress={this.goToSignUp.bind(this)}
+                    buttonStyles={styles.primaryButton}
+				    buttonTextStyles={styles.primaryButtonText}  />
 				
 			</View>
 		);
 	}
-
-	
 }
 
 module.exports = Login;
