@@ -6,16 +6,26 @@ import {
 	View,
 	Text,
 	TextInput,
-	Image
+	Image,
+	StyleSheet
 } from 'react-native';
 
 class Header extends Component {
 	render() {
 		return (
 			// CHANGME - Change you the image with your logo
-			<Image source={require('../images/changeme.jpg')} />
+			<View style={styles.header}>
+				<Image source={require('../images/changeme.jpg')} />
+			</View>
 		);
 	}
 }
+
+var styles = StyleSheet.create({
+	header: {
+		alignItems: "center",
+		marginTop: 30,
+	},
+});
 
 module.exports = Header;

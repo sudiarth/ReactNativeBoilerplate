@@ -8,13 +8,15 @@ import {
 	TextInput,
 	Image,
 	AsyncStorage,
-	Navigator
+	Navigator,
+	StyleSheet
 } from 'react-native';
 
 var styles = require('../styles/common-styles');
 var Header = require('../components/Header');
 var Button = require('../components/Button');
 var Home = require('../screens/Home');
+var AppConfig = require('../config/AppConfig');
 
 var firebase = require("firebase");
 // Initialize Firebase
@@ -77,22 +79,30 @@ class Login extends Component {
 
 	render() {
 		return (
-			<View style={styles.container}>
+			<View style={localStyles.container}>
 				<Header style={styles.header} />
-				<TextInput 
-					style={styles.textinput}
-					onChangeText={(text) => this.setState({email: text})}
-					value={this.state.email}
-					placeholder={"Email Address"} />
-
-				<TextInput
-					style={styles.textinput}
-					onChangeText={(text) => this.setState({password: text})}
-					value={this.state.password}
-					placeholder={"Password"}
-					secureTextEntry={true} />
+				<View style={styles.inputs}>
+					<View style={styles.inputContainer}>
+						<Image style={styles.inputUsername} source={require('../images/icons/user_name.png')}/>
+						<TextInput 
+							style={[styles.input, styles.whiteFont]}
+							onChangeText={(text) => this.setState({email: text})}
+							value={this.state.email}
+							placeholder="Email Address"
+							 />
+					</View>
+					<View style={styles.inputContainer}>
+		                <Image style={styles.inputPassword} source={require('../images/icons/pw.png')}/>
+						<TextInput
+							style={[styles.input, styles.whiteFont]}
+							onChangeText={(text) => this.setState({password: text})}
+							value={this.state.password}
+							placeholder="Password"
+							secureTextEntry={true} />
+					</View>
+				</View>
 				<Button 
-				    text="    Login     " 
+				    text="Login" 
 				    onPress={this.login.bind(this)}
 				    buttonStyles={styles.primaryButton}
 				    buttonTextStyles={styles.primaryButtonText} />
@@ -106,5 +116,20 @@ class Login extends Component {
 		);
 	}
 }
+
+var localStyles = StyleSheet.create({
+	container: {
+		flexDirection: 'column',
+		flex: 1,
+		backgroundColor: AppConfig.appBgColor,
+	},
+	bg: {
+		position: 'absolute',
+		left: 0,
+		top: 0,
+		width: AppConfig.windowWidth,
+		height: AppConfig.windowHeight
+	},
+});
 
 module.exports = Login;
