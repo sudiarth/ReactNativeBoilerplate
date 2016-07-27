@@ -11,7 +11,7 @@ import {
 
 // CHANGEME - Requred your screens here
 var MainContent = require('./MainContent');
-var Page1 = require('../screens/Page1');
+var TabViewExample = require('../screens/TabViewExample');
 var Page2 = require('../screens/Page2');
 var Page3 = require('../screens/Page3');
 
@@ -37,7 +37,7 @@ class Menu extends Component {
             // CHANGEME - Change these menu items to your pages
             // ['Home', Home],
             ['Home', MainContent],
-            ['Page 1', Page1],
+            ['Tab View Example', TabViewExample],
             ['Page 2', Page2],
             ['Page 3', Page3]
         ];

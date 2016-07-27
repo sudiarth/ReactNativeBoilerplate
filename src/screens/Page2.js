@@ -36,5 +36,5 @@ class Page2 extends Component {
 
 module.exports = Page2;
 module.exports.detail = {
-	title: "Page 2" // CHANGEME
+	title: "Forms Example" // CHANGEME
 };

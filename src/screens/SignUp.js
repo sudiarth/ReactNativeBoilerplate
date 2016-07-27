@@ -30,7 +30,8 @@ class SingUp extends Component {
 
 		this.state = {
 			email: '',
-			password: ''
+			password: '',
+            confirmPw: ''
 		};
 	}
 
@@ -84,10 +85,19 @@ class SingUp extends Component {
                             placeholder="Password"
                             secureTextEntry={true} />
                     </View>
+                    <View style={styles.inputContainer}>
+                        <Image style={styles.inputPassword} source={require('../images/icons/pw.png')}/>
+                        <TextInput
+                            style={[styles.input]}
+                            onChangeText={(text) => this.setState({confirmPw: text})}
+                            value={this.state.confirmPw}
+                            placeholder="Confirm Password"
+                            secureTextEntry={true} />
+                    </View>
                 </View>
 
                 <Button 
-                    text="   Sign Up   " 
+                    text="Sign Up" 
                     onPress={this.sigUp.bind(this)}
                     buttonStyles={styles.primaryButton}
                     buttonTextStyles={styles.primaryButtonText} />

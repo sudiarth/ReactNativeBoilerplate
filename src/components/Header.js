@@ -15,7 +15,7 @@ class Header extends Component {
 		return (
 			// CHANGME - Change you the image with your logo
 			<View style={styles.header}>
-				<Image source={require('../images/changeme.jpg')} />
+				<Image source={require('../images/changeme_logo.png')} />
 			</View>
 		);
 	}
