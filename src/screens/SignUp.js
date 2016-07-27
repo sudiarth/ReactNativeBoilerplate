@@ -7,7 +7,9 @@ import {
     Text,
     TextInput,
     View,
-    AsyncStorage
+    AsyncStorage,
+    StyleSheet,
+    Image
 } from 'react-native';
 
 var firebase = require("firebase");
@@ -17,7 +19,9 @@ export const authRef = firebase.auth();
 
 var Home = require('./Home');
 var Button = require('../components/Button');
+var Header = require('../components/Header');
 var styles = require('../styles/common-styles');
+var AppConfig = require('../config/AppConfig');
 
 class SingUp extends Component {
 
@@ -57,18 +61,30 @@ class SingUp extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-      		    <TextInput
-                    style={styles.textinput}
-        		    onChangeText={(text) => this.setState({email: text})}
-        		    value={this.state.email}
-                    placeholder={"Email Address"} />
-                <TextInput
-                    style={styles.textinput}
-                    onChangeText={(text) => this.setState({password: text})}
-                    value={this.state.password}
-                    secureTextEntry={true}
-                    placeholder={"Password"}/>
+            <View style={localStyles.container}>
+                <View style={localStyles.header}>
+                    <Text style={localStyles.signUpTitle}>Sing Up</Text>
+                </View>
+                <View style={styles.inputs}>
+                    <View style={styles.inputContainer}>
+                        <Image style={styles.inputUsername} source={require('../images/icons/user_name.png')}/>
+                        <TextInput 
+                            style={[styles.input]}
+                            onChangeText={(text) => this.setState({email: text})}
+                            value={this.state.email}
+                            placeholder="Email Address"
+                             />
+                    </View>
+                    <View style={styles.inputContainer}>
+                        <Image style={styles.inputPassword} source={require('../images/icons/pw.png')}/>
+                        <TextInput
+                            style={[styles.input]}
+                            onChangeText={(text) => this.setState({password: text})}
+                            value={this.state.password}
+                            placeholder="Password"
+                            secureTextEntry={true} />
+                    </View>
+                </View>
 
                 <Button 
                     text="   Sign Up   " 
@@ -84,5 +100,27 @@ class SingUp extends Component {
         );
     }
 }
+
+var localStyles = StyleSheet.create({
+    container: {
+        flexDirection: 'column',
+        flex: 1,
+        backgroundColor: AppConfig.appBgColor,
+    },
+    bg: {
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        width: AppConfig.windowWidth,
+        height: AppConfig.windowHeight
+    },
+    header: {
+        alignItems: "center",
+        marginTop: 30,
+    },
+    signUpTitle: {
+        fontSize: 18
+    }
+});
 
 module.exports = SingUp;

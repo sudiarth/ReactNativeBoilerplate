@@ -85,7 +85,7 @@ class Login extends Component {
 					<View style={styles.inputContainer}>
 						<Image style={styles.inputUsername} source={require('../images/icons/user_name.png')}/>
 						<TextInput 
-							style={[styles.input, styles.whiteFont]}
+							style={[styles.input]}
 							onChangeText={(text) => this.setState({email: text})}
 							value={this.state.email}
 							placeholder="Email Address"
@@ -94,7 +94,7 @@ class Login extends Component {
 					<View style={styles.inputContainer}>
 		                <Image style={styles.inputPassword} source={require('../images/icons/pw.png')}/>
 						<TextInput
-							style={[styles.input, styles.whiteFont]}
+							style={[styles.input]}
 							onChangeText={(text) => this.setState({password: text})}
 							value={this.state.password}
 							placeholder="Password"

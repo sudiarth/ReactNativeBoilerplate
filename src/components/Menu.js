@@ -26,6 +26,7 @@ class Menu extends Component {
 
     logout() {
         this.props.logout();
+        // TODO : firebase deauthenticate
     }
 
     render() {
