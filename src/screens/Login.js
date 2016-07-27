@@ -46,12 +46,12 @@ class Login extends Component {
 			loaded: false
 		});
 
-		var that = this;
+		var self = this;
 
 		authRef.signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user_data) {
 			// console.log("user id:" + user_data.uid);
 			AsyncStorage.setItem('user_data', JSON.stringify(user_data));
-			that.props.navigator.push({
+			self.props.navigator.push({
 				component: Home
 			});
 		}, function(error) {

@@ -42,6 +42,7 @@ class HomeOrLogin extends Component {
 		if(this.state.component) {
 			return (
 				<Navigator
+					ref="rootNavigator"
 					initialRoute={{ component: this.state.component }}
 					configureScene={() => {
 						return Navigator.SceneConfigs.FloatFromRight;
