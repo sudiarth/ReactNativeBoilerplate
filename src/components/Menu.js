@@ -91,7 +91,7 @@ var styles = StyleSheet.create({
         paddingBottom: 10,
     },
     menuItemText: {
-        fontSize: 17,
+        fontSize: 14,
         fontWeight: '500',
         paddingTop: 10,
         flex: 1,
