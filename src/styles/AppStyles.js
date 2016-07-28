@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
         backgroundColor: AppConfig.appBgColor,
     },
     welcome: {
-       textAlign: 'center',
-       margin: 10,
+        textAlign: 'center',
+        margin: 10,
     },
     primaryButton: {
         margin: 10,

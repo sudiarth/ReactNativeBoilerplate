@@ -122,11 +122,11 @@ class Home extends Component {
 	}
 
 	logout() {
-		AsyncStorage.removeItem('user_data');
+		authRef.signOut(); // Invalidate firebase session
+		AsyncStorage.removeItem('user_data'); // Remove any local user_data stored
 		this.props.navigator.immediatelyResetRouteStack([{
 			component: HomeOrLogin
 		}]);
-		// TODO : firebase deauthenticate
 	}
 
 	componentWillMount() {
@@ -141,8 +141,8 @@ class Home extends Component {
 			});
 		});
 		var user = authRef.currentUser;
-		console.log("Current Firebase session user is:");
-		console.log(user);
+		// console.log("Current Firebase session user is:");
+		// console.log(user);
 	}
 
 	render() {
