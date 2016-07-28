@@ -7,8 +7,8 @@ This project is a derivative of the [react-native-starter-app](https://github.co
 
 | | | |
 |---|---|---|
-| ![alt text](https://www.dropbox.com/s/oscuemmt0k0hh44/Simulator%20Screen%20Shot%20Jul%2028%2C%202016%2C%205.13.59%20PM.png?dl=0 "Screen w/ tabs") | ![alt text](https://www.dropbox.com/s/rim15pwew2lmzvo/Simulator%20Screen%20Shot%20Jul%2028%2C%202016%2C%205.14.47%20PM.png?dl=0 "Sidebar Menu open") | ![alt text](https://www.dropbox.com/s/cnfpmrzt3s477cp/Simulator%20Screen%20Shot%20Jul%2028%2C%202016%2C%205.13.35%20PM.png?dl=0 "Update Profile page") | 
-| ![alt text](https://www.dropbox.com/s/rymfy8v5586sz28/Simulator%20Screen%20Shot%20Jul%2028%2C%202016%2C%205.14.04%20PM.png?dl=0 "List View Example") | ![alt text](https://www.dropbox.com/s/i7opkzkg1sxubqp/Simulator%20Screen%20Shot%20Jul%2028%2C%202016%2C%205.14.15%20PM.png?dl=0 "Login Page") | ![alt text](https://www.dropbox.com/s/yi68q0kgqm3jfj5/Simulator%20Screen%20Shot%20Jul%2028%2C%202016%2C%205.14.17%20PM.png?dl=0 "Sign Up Page") |
+| ![alt text](https://dl.dropboxusercontent.com/s/oscuemmt0k0hh44/Simulator%20Screen%20Shot%20Jul%2028%2C%202016%2C%205.13.59%20PM.png "Screen w/ tabs") | ![alt text](https://dl.dropboxusercontent.com/s/rim15pwew2lmzvo/Simulator%20Screen%20Shot%20Jul%2028%2C%202016%2C%205.14.47%20PM.png "Sidebar Menu open") | ![alt text](https://dl.dropboxusercontent.com/s/cnfpmrzt3s477cp/Simulator%20Screen%20Shot%20Jul%2028%2C%202016%2C%205.13.35%20PM.png "Update Profile page") | 
+| ![alt text](https://dl.dropboxusercontent.com/s/rymfy8v5586sz28/Simulator%20Screen%20Shot%20Jul%2028%2C%202016%2C%205.14.04%20PM.png "List View Example") | ![alt text](https://dl.dropboxusercontent.com/s/i7opkzkg1sxubqp/Simulator%20Screen%20Shot%20Jul%2028%2C%202016%2C%205.14.15%20PM.png "Login Page") | ![alt text](https://dl.dropboxusercontent.com/s/yi68q0kgqm3jfj5/Simulator%20Screen%20Shot%20Jul%2028%2C%202016%2C%205.14.17%20PM.png "Sign Up Page") |
 | | | |
 
 ### Getting Started
