@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 
 var styles = require('../styles/common-styles');
-var Header = require('../components/Header');
+var Logo = require('../components/Logo');
 var Button = require('../components/Button');
 var Home = require('../screens/Home');
 var AppConfig = require('../config/AppConfig');
@@ -80,7 +80,7 @@ class Login extends Component {
 	render() {
 		return (
 			<View style={localStyles.container}>
-				<Header style={styles.header} />
+				<Logo />
 				<View style={styles.inputs}>
 					<View style={styles.inputContainer}>
 						<Image style={styles.inputUsername} source={require('../images/icons/user_name.png')}/>

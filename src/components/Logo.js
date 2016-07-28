@@ -10,11 +10,11 @@ import {
 	StyleSheet
 } from 'react-native';
 
-class Header extends Component {
+class Logo extends Component {
 	render() {
 		return (
 			// CHANGME - Change you the image with your logo
-			<View style={styles.header}>
+			<View style={styles.logo}>
 				<Image source={require('../images/changeme_logo.png')} />
 			</View>
 		);
@@ -22,10 +22,10 @@ class Header extends Component {
 }
 
 var styles = StyleSheet.create({
-	header: {
+	logo: {
 		alignItems: "center",
 		marginTop: 30,
 	},
 });
 
-module.exports = Header;
+module.exports = Logo;

@@ -19,7 +19,6 @@ export const authRef = firebase.auth();
 
 var Home = require('./Home');
 var Button = require('../components/Button');
-var Header = require('../components/Header');
 var styles = require('../styles/common-styles');
 var AppConfig = require('../config/AppConfig');
 
