@@ -39,8 +39,8 @@ class Menu extends Component {
             // CHANGEME - Change these menu items to your pages
             ['Home', MainContent],
             ['Tab View Example', TabViewExample],
-            ['Forms Example', FormsExample],
-            ['List View Example', ListViewExample]
+            ['List View Example', ListViewExample],
+            ['Update Profile', FormsExample]
         ];
 
         // Build the actual menu items
