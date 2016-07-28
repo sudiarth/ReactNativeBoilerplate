@@ -12,7 +12,7 @@ import {
 	StyleSheet
 } from 'react-native';
 
-var styles = require('../styles/common-styles');
+var AppStyles = require('../styles/AppStyles');
 var Logo = require('../components/Logo');
 var Button = require('../components/Button');
 var Home = require('../screens/Home');
@@ -81,20 +81,20 @@ class Login extends Component {
 		return (
 			<View style={localStyles.container}>
 				<Logo />
-				<View style={styles.inputs}>
-					<View style={styles.inputContainer}>
-						<Image style={styles.inputUsername} source={require('../images/icons/user_name.png')}/>
+				<View style={AppStyles.inputs}>
+					<View style={AppStyles.inputContainer}>
+						<Image style={AppStyles.inputUsername} source={require('../images/icons/user_name.png')}/>
 						<TextInput 
-							style={[styles.input]}
+							style={[AppStyles.input]}
 							onChangeText={(text) => this.setState({email: text})}
 							value={this.state.email}
 							placeholder="Email Address"
 							 />
 					</View>
-					<View style={styles.inputContainer}>
-		                <Image style={styles.inputPassword} source={require('../images/icons/pw.png')}/>
+					<View style={AppStyles.inputContainer}>
+		                <Image style={AppStyles.inputPassword} source={require('../images/icons/pw.png')}/>
 						<TextInput
-							style={[styles.input]}
+							style={[AppStyles.input]}
 							onChangeText={(text) => this.setState({password: text})}
 							value={this.state.password}
 							placeholder="Password"
@@ -104,13 +104,13 @@ class Login extends Component {
 				<Button 
 				    text="Login" 
 				    onPress={this.login.bind(this)}
-				    buttonStyles={styles.primaryButton}
-				    buttonTextStyles={styles.primaryButtonText} />
+				    buttonStyles={AppStyles.primaryButton}
+				    buttonTextStyles={AppStyles.primaryButtonText} />
 				<Button 
                     text="New User?" 
                     onPress={this.goToSignUp.bind(this)}
-                    buttonStyles={styles.primaryButton}
-				    buttonTextStyles={styles.primaryButtonText}  />
+                    buttonStyles={AppStyles.primaryButton}
+				    buttonTextStyles={AppStyles.primaryButtonText}  />
 				
 			</View>
 		);

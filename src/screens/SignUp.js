@@ -19,7 +19,7 @@ export const authRef = firebase.auth();
 
 var Home = require('./Home');
 var Button = require('../components/Button');
-var styles = require('../styles/common-styles');
+var AppStyles = require('../styles/AppStyles');
 var AppConfig = require('../config/AppConfig');
 
 class SingUp extends Component {
@@ -70,29 +70,29 @@ class SingUp extends Component {
                 <View style={localStyles.header}>
                     <Text style={localStyles.signUpTitle}>Sing Up</Text>
                 </View>
-                <View style={styles.inputs}>
-                    <View style={styles.inputContainer}>
-                        <Image style={styles.inputUsername} source={require('../images/icons/user_name.png')}/>
+                <View style={AppStyles.inputs}>
+                    <View style={AppStyles.inputContainer}>
+                        <Image style={AppStyles.inputUsername} source={require('../images/icons/user_name.png')}/>
                         <TextInput 
-                            style={[styles.input]}
+                            style={[AppStyles.input]}
                             onChangeText={(text) => this.setState({email: text})}
                             value={this.state.email}
                             placeholder="Email Address"
                              />
                     </View>
-                    <View style={styles.inputContainer}>
-                        <Image style={styles.inputPassword} source={require('../images/icons/pw.png')}/>
+                    <View style={AppStyles.inputContainer}>
+                        <Image style={AppStyles.inputPassword} source={require('../images/icons/pw.png')}/>
                         <TextInput
-                            style={[styles.input]}
+                            style={[AppStyles.input]}
                             onChangeText={(text) => this.setState({password: text})}
                             value={this.state.password}
                             placeholder="Password"
                             secureTextEntry={true} />
                     </View>
-                    <View style={styles.inputContainer}>
-                        <Image style={styles.inputPassword} source={require('../images/icons/pw.png')}/>
+                    <View style={AppStyles.inputContainer}>
+                        <Image style={AppStyles.inputPassword} source={require('../images/icons/pw.png')}/>
                         <TextInput
-                            style={[styles.input]}
+                            style={[AppStyles.input]}
                             onChangeText={(text) => this.setState({confirmPw: text})}
                             value={this.state.confirmPw}
                             placeholder="Confirm Password"
@@ -103,13 +103,13 @@ class SingUp extends Component {
                 <Button 
                     text="Sign Up" 
                     onPress={this.sigUp.bind(this)}
-                    buttonStyles={styles.primaryButton}
-                    buttonTextStyles={styles.primaryButtonText} />
+                    buttonStyles={AppStyles.primaryButton}
+                    buttonTextStyles={AppStyles.primaryButtonText} />
                 <Button 
                     text="Got an Account?" 
                     onPress={this.goToLogin.bind(this)}
-                    buttonStyles={styles.primaryButton}
-                    buttonTextStyles={styles.primaryButtonText} />
+                    buttonStyles={AppStyles.primaryButton}
+                    buttonTextStyles={AppStyles.primaryButtonText} />
             </View>
         );
     }

@@ -11,7 +11,7 @@ import {
 	ScrollView
 } from 'react-native';
 
-var styles = require('../styles/common-styles');
+var AppStyles = require('../styles/AppStyles');
 
 var Button = require('./Button');
 var HomeOrLogin = require('../screens/HomeOrLogin');
@@ -36,8 +36,8 @@ class MainContent extends Component {
 	render() {
 		return (
 			<ScrollView automaticallyAdjustContentInsets={false}>
-				<View style={styles.container}>
-					<Text style={styles.welcome}>
+				<View style={AppStyles.container}>
+					<Text style={AppStyles.welcome}>
 						Welcome User
 						You're currently logged in.  
 					</Text>

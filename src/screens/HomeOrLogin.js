@@ -9,7 +9,7 @@ import {
 	ActivityIndicator
 } from 'react-native';
 
-var styles = require('../styles/common-styles');
+var AppStyles = require('../styles/AppStyles');
 
 class HomeOrLogin extends Component {
 	constructor(props) {
@@ -58,7 +58,7 @@ class HomeOrLogin extends Component {
 			return (
 				<ActivityIndicator
         			animating={this.state.isLoading}
-        			style={[styles.processingAnimation, {height: 80}]}
+        			style={[AppStyles.processingAnimation, {height: 80}]}
         			size="large" />
         	);
 		}
