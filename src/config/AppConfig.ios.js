@@ -11,6 +11,9 @@ import React, { Component } from 'react';
 var Dimensions = require('Dimensions');
 var Window = Dimensions.get('window');
 
+// CHANGEME
+exports.appTitle = "ReactNativeBoilerplate";
+
 // Window Dimensions
 exports.windowHeight = Window.height;
 exports.windowWidth = Window.width;

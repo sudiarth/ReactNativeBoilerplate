@@ -21,6 +21,9 @@ var AppConfig = require('../config/AppConfig');
 
 class Menu extends Component {
 	goToScreen(title, link) {
+        if (title === 'Home') {
+            title = AppConfig.appTitle;
+        }
         this.props.navigate(title, link);
     }
 

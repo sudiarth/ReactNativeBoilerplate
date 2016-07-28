@@ -90,7 +90,7 @@ class Home extends Component {
 		var Component = route.component;
 
 		// Default navbar title
-		var title = "ReactNativeBoilerplate"; // CHANGME
+		var title = AppConfig.appTitle;
 		if (route.title) title = route.title;
 
 		// Determine which icon component - hamburger or back?

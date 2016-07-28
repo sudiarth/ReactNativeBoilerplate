@@ -126,8 +126,8 @@ const styles = StyleSheet.create({
     },
     navbarTitle: {
         color: '#FFFFFF',
-        bottom: 6,
-        fontSize: 13,
+        bottom: 3,
+        fontSize: 15,
     },
 
 });
