@@ -26,7 +26,6 @@ class Menu extends Component {
 
     logout() {
         this.props.logout();
-        // TODO : firebase deauthenticate
     }
 
     render() {
@@ -35,7 +34,6 @@ class Menu extends Component {
 
         var links = [
             // CHANGEME - Change these menu items to your pages
-            // ['Home', Home],
             ['Home', MainContent],
             ['Tab View Example', TabViewExample],
             ['Forms Example', FormsExample],

@@ -56,6 +56,11 @@ var NavbarButton = React.createClass({
 	}
 });
 
+/**
+ *	THIS CLASS IS YOUR ENTRY POINT INTO THE APP
+ *  ALL SUBSEQUENT NAVIGATION ROUTES WILL BE PUSHED
+ *  ONTO THIS LAYER
+ **/
 class Home extends Component {
 	constructor(props) {
 		super(props);
@@ -121,6 +126,7 @@ class Home extends Component {
 		this.props.navigator.immediatelyResetRouteStack([{
 			component: HomeOrLogin
 		}]);
+		// TODO : firebase deauthenticate
 	}
 
 	componentWillMount() {
