@@ -70,10 +70,10 @@ class Login extends Component {
 
 	goToSignUp() {
 		// Lazy load signup page
-		var SingUp = require('./SignUp');
+		var SignUp = require('./SignUp');
 		
 		this.props.navigator.push({
-			component: SingUp
+			component: SignUp
 		});
 	}
 

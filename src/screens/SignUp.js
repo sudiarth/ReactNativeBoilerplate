@@ -22,7 +22,7 @@ var Button = require('../components/Button');
 var AppStyles = require('../styles/AppStyles');
 var AppConfig = require('../config/AppConfig');
 
-class SingUp extends Component {
+class SignUp extends Component {
 
 	constructor(props){
 		super(props);
@@ -68,7 +68,7 @@ class SingUp extends Component {
         return (
             <View style={localStyles.container}>
                 <View style={localStyles.header}>
-                    <Text style={localStyles.signUpTitle}>Sing Up</Text>
+                    <Text style={localStyles.signUpTitle}>Sign Up</Text>
                 </View>
                 <View style={AppStyles.inputs}>
                     <View style={AppStyles.inputContainer}>
@@ -137,4 +137,4 @@ var localStyles = StyleSheet.create({
     }
 });
 
-module.exports = SingUp;
+module.exports = SignUp;
