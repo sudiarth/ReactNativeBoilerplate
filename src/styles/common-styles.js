@@ -10,11 +10,13 @@ const styles = StyleSheet.create({
     container: {
         position: 'relative',
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: AppConfig.appBgColor,
         height: AppConfig.windowHeight,
         width: AppConfig.windowWidth,
+    },
+    containerCentered: {
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     p: {
         fontFamily: AppConfig.baseFont,

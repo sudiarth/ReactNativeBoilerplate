@@ -30,13 +30,6 @@ class TempScreen extends Component {
 				<Text style={[AppStyles.baseText, AppStyles.p]}>
 					{placeholderText}
 				</Text>
-
-				<View style={[AppStyles.spacer_10]} />
-
-				<Button
-					text={'Tap to test the back button'}
-					style={'outlined'}
-					onPress={()=>this.navigate(placeholderText).bind(this)} />
 			</View>
 		);
 	}

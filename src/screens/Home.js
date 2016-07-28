@@ -99,7 +99,7 @@ class Home extends Component {
 			leftButton = (
 				<NavbarButton 
 					image={require('../images/icons/back_button.png')}
-					onPress={() => self.refs.rootNavigator.pop} />
+					onPress={self.refs.rootNavigator.pop} />
 			);
 		}
 
