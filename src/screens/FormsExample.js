@@ -20,21 +20,21 @@ var FormValidation = require('tcomb-form-native');
 var Button = require('../components/Button');
 
 // CHANGEME - change to your class name
-class Page3 extends Component {
+class FormsExample extends Component {
 	render() {
 		var Form = FormValidation.form.Form;
 
 		return (
 			<ScrollView automaticallyAdjustContentInsets={false}>
 				<View>
-					<Text>Page3 test</Text>
+					<Text>FormsExample test</Text>
 				</View>
 			</ScrollView>
 		)
 	}
 }
 
-module.exports = Page3;
+module.exports = FormsExample;
 module.exports.detail = {
-	title: "Page 3" // CHANGEME
+	title: "Forms Example" // CHANGEME
 };

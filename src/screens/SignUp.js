@@ -45,12 +45,17 @@ class SingUp extends Component {
     }
 
     sigUp() {
-        var that = this;
+        var self = this;
+
+        if (this.state.password !== this.state.confirmPw) {
+            alert("Passwords don't match!");
+            return false;
+        }
 
         authRef.createUserWithEmailAndPassword(this.state.email, this.state.password).then(function(new_user) {
             console.log(new_user);
             AsyncStorage.setItem('user_data', JSON.stringify(new_user));
-            that.props.navigator.push({
+            self.props.navigator.push({
                 component: Home
             });
         }, function(error) {

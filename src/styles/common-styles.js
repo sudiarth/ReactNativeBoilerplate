@@ -16,6 +16,12 @@ const styles = StyleSheet.create({
         height: AppConfig.windowHeight,
         width: AppConfig.windowWidth,
     },
+    p: {
+        fontFamily: AppConfig.baseFont,
+        margin: 0,
+        fontWeight: '500',
+        color: AppConfig.textColor,
+    },
     login: {
         flex: .5,
         justifyContent: 'center',

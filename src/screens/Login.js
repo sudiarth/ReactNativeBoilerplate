@@ -21,10 +21,10 @@ var AppConfig = require('../config/AppConfig');
 var firebase = require("firebase");
 // Initialize Firebase
 var FIREBASE_CONFIG = {
-	apiKey: "AIzaSyAA_Oyg7qciFv1WZbJe7iFFXwvMMrZoazw",
-	authDomain: "reactnativeboilerplate.firebaseapp.com",
-	databaseURL: "https://reactnativeboilerplate.firebaseio.com",
-	storageBucket: "reactnativeboilerplate.appspot.com",
+	apiKey: AppConfig.apiKey,
+	authDomain: AppConfig.authDomain,
+	databaseURL: AppConfig.databaseURL,
+	storageBucket: AppConfig.storageBucket,
 };
 
 firebase.initializeApp(FIREBASE_CONFIG);
