@@ -104,9 +104,9 @@ const styles = StyleSheet.create({
 
     //Home page
     navbarButton: {
-        width: 26,
+        width: 30,
         height: 26,
-        left: 20,
+        left: 10,
         top: 9,
         tintColor: '#FFFFFF',
     },

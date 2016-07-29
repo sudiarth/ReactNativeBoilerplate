@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import {
 	AppRegistry,
-	StyleSheet,
-	Text,
-	View,
-	AsyncStorage,
-	Navigator,
 } from 'react-native';
 
 var HomeOrLogin = require('./src/screens/HomeOrLogin');
