@@ -9,7 +9,7 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-var AppStyles = require('../styles/common-styles');
+var AppStyles = require('../styles/AppStyles');
 var AppConfig = require('../config/AppConfig');
 
 // We use React.createClass() here to access this.props

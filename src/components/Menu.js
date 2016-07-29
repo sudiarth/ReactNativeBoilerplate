@@ -12,10 +12,8 @@ import {
 // CHANGEME - Requred your screens here
 var MainContent = require('./MainContent');
 var TabViewExample = require('../screens/TabViewExample');
-var FormsExample = require('../screens/FormsExample');
+var UpdateProfile = require('../screens/UpdateProfile');
 var ListViewExample = require('../screens/ListViewExample');
-
-var HomeOrLogin = require('../screens/HomeOrLogin');
 
 var AppConfig = require('../config/AppConfig');
 
@@ -40,7 +38,7 @@ class Menu extends Component {
             ['Home', MainContent],
             ['Tab View Example', TabViewExample],
             ['List View Example', ListViewExample],
-            ['Update Profile', FormsExample]
+            ['Update Profile', UpdateProfile]
         ];
 
         // Build the actual menu items

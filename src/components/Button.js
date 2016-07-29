@@ -9,7 +9,7 @@ import {
 	TouchableOpacity,
 } from 'react-native';
 
-var styles = require('../styles/common-styles');
+var AppStyles = require('../styles/AppStyles');
 
 var Button = React.createClass({
 	onPress: function() {
@@ -19,7 +19,7 @@ var Button = React.createClass({
 	render: function() {
 		return (
 			<TouchableOpacity
-				style={[styles.formButton, this.props.buttonStyles]}
+				style={[AppStyles.formButton, this.props.buttonStyles]}
 				onPress={this.props.onPress}
 				activeOpacity={0.7} >
 				<Text style={this.props.buttonTextStyles}>{this.props.text ? this.props.text : 'Click Here'}</Text>

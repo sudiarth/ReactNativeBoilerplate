@@ -8,7 +8,7 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-var AppStyles = require('../styles/common-styles');
+var AppStyles = require('../styles/AppStyles');
 
 class TempScreen extends Component {
 	navigate(navbar_title) {

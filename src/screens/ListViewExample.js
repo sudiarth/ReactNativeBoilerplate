@@ -15,7 +15,7 @@ var Button = require('../components/Button');
 var AppConfig = require('../config/AppConfig');
 var ListRow = require('../components/ListRow');
 var TempScreen = require('../screens/TempScreen');
-var AppStyles = require('../styles/common-styles');
+var AppStyles = require('../styles/AppStyles');
 
 // CHANGEME - Fake hardcoded data 
 var defaultData = [

@@ -25,7 +25,7 @@ var Button = require('../components/Button');
 var HomeOrLogin = require('./HomeOrLogin');
 var Menu = require('../components/Menu');
 var MainContent = require('../components/MainContent');
-var styles = require('../styles/common-styles');
+var AppStyles = require('../styles/AppStyles');
 
 // 3rd Party Components
 var NavigationBar = require('react-native-navbar');
@@ -36,7 +36,7 @@ var AppConfig = require('../config/AppConfig');
 var NavbarTitle = React.createClass({
 	render: function() {
 		return (
-			<Text style={[styles.baseText, styles.strong, styles.navbarTitle]}>{this.props.title}</Text>
+			<Text style={[AppStyles.baseText, AppStyles.strong, AppStyles.navbarTitle]}>{this.props.title}</Text>
 		);
 	}
 });
@@ -50,7 +50,7 @@ var NavbarButton = React.createClass({
 	render: function() {
 		return (
 			<TouchableOpacity onPress={this.onPress} activeOpacity={0.6}>
-				<Image source={this.props.image} style={styles.navbarButton} />
+				<Image source={this.props.image} style={AppStyles.navbarButton} />
 			</TouchableOpacity>
 		)
 	}
@@ -109,11 +109,11 @@ class Home extends Component {
 		}
 
 		return (
-			<View style={styles.appContainer, styles.container}>
+			<View style={AppStyles.appContainer, AppStyles.container}>
 				<NavigationBar
 					title={<NavbarTitle title={title} />}
 					statusBar={{ style: 'light-content', hidden: false }}
-					style={styles.navbar}
+					style={AppStyles.navbar}
 					tintColor={AppConfig.navbarBgColor}
 					leftButton={leftButton} />
 				<Component navigator={navigator} route={route} {...route.passProps} />
@@ -122,11 +122,11 @@ class Home extends Component {
 	}
 
 	logout() {
-		AsyncStorage.removeItem('user_data');
+		authRef.signOut(); // Invalidate firebase session
+		AsyncStorage.removeItem('user_data'); // Remove any local user_data stored
 		this.props.navigator.immediatelyResetRouteStack([{
 			component: HomeOrLogin
 		}]);
-		// TODO : firebase deauthenticate
 	}
 
 	componentWillMount() {
@@ -141,8 +141,8 @@ class Home extends Component {
 			});
 		});
 		var user = authRef.currentUser;
-		console.log("Current Firebase session user is:");
-		console.log(user);
+		// console.log("Current Firebase session user is:");
+		// console.log(user);
 	}
 
 	render() {
@@ -150,7 +150,7 @@ class Home extends Component {
 			return (
 				<ActivityIndicator
         			animating={this.state.isLoading}
-        			style={[styles.processingAnimation, {height: 80}]}
+        			style={[AppStyles.processingAnimation, {height: 80}]}
         			size="large" />
         	);
 		}
@@ -162,7 +162,7 @@ class Home extends Component {
 
 				<Navigator 
 					ref="rootNavigator"
-					style={[styles.appContainer]}
+					style={[AppStyles.appContainer]}
 					renderScene={this.renderScene.bind(this)}
 					initialRoute={{
 						component: MainContent,
